@@ -1,0 +1,45 @@
+﻿@inherits IndexBase
+@page "/courses"
+<h2>Courses</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Number
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Credits
+            </th>
+            <th>
+                Department
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Data.Courses)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Credits
+                </td>
+                <td>
+                    @item.DepartmentName
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
